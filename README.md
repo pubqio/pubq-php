@@ -10,7 +10,7 @@ You can get the Pubq PHP library via composer:
 $ composer require pubq/pubq-php
 ```
 
-Or add to `composer.json`:
+Or manually add to `composer.json`:
 
 ```json
 "require": {
