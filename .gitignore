@@ -1,0 +1,10 @@
+/.phpunit.cache
+/vendor
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+/.idea
+/.vscode
+/.phpstorm.meta.php
+/_ide_helper*

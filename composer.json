@@ -1,0 +1,22 @@
+{
+    "name": "pubq/pubq-php",
+    "description": "Pubq library for PHP to publish messages in channels.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Pubq\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pubq Dev",
+            "email": "dev@pubq.io"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^5.4",
+        "guzzlehttp/guzzle": "^7.6"
+    }
+}
