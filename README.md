@@ -28,6 +28,8 @@ $ composer update
 
 ### Construct Pubq HTTP API
 
+Get your application id, key and secret from [Pubq dashboard](https://dashboard.pubq.io) by [creating a new app](https://dashboard.pubq.io/applications/create) or use existing one.
+
 ```php
 <?php
 
