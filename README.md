@@ -32,6 +32,7 @@ $ composer update
 <?php
 
 $pubq = new Pubq\HttpApi(
+    "YOUR_APPLICATION_ID",
     "YOUR_APPLICATION_KEY",
     "YOUR_APPLICATION_SECRET",
 );

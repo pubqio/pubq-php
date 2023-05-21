@@ -6,12 +6,14 @@ use GuzzleHttp\Client;
 
 class HttpApi
 {
+    private $applicationId;
     private $applicationKey;
     private $applicationSecret;
     private $httpClient;
 
-    public function __construct($applicationKey, $applicationSecret)
+    public function __construct($applicationId, $applicationKey, $applicationSecret)
     {
+        $this->applicationId = $applicationId;
         $this->applicationKey = $applicationKey;
         $this->applicationSecret = $applicationSecret;
 
@@ -24,6 +26,7 @@ class HttpApi
     {
         $response = $this->httpClient->post('/v1/messages/publish', [
             'headers' => [
+                'id' => $this->applicationId,
                 'key' => $this->applicationKey,
                 'secret' => $this->applicationSecret,
             ],
