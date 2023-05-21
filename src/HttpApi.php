@@ -26,9 +26,9 @@ class HttpApi
     {
         $response = $this->httpClient->post('/v1/messages/publish', [
             'headers' => [
-                'id' => $this->applicationId,
-                'key' => $this->applicationKey,
-                'secret' => $this->applicationSecret,
+                'Id' => $this->applicationId,
+                'Key' => $this->applicationKey,
+                'Secret' => $this->applicationSecret,
             ],
             'json' => [
                 'channel' => $channel,
