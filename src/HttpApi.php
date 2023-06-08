@@ -18,7 +18,7 @@ class HttpApi
         $this->applicationSecret = $applicationSecret;
 
         $this->httpClient = new Client([
-            'base_uri' => 'https://api.pubq.io',
+            'base_uri' => 'https://rest.pubq.io',
         ]);
     }
 
