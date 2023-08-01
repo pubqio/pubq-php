@@ -14,7 +14,7 @@ Or manually add to `composer.json`:
 
 ```json
 "require": {
-    "pubq/pubq-php": "^3.0.0"
+    "pubq/pubq-php": "^4.0.0"
 }
 ```
 
@@ -33,7 +33,7 @@ Get your application id, key and secret from [Pubq dashboard](https://dashboard.
 ```php
 <?php
 
-$pubq = new Pubq\HttpApi(
+$pubq = new Pubq\REST(
     "YOUR_APPLICATION_ID",
     "YOUR_APPLICATION_KEY",
     "YOUR_APPLICATION_SECRET",

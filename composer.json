@@ -1,6 +1,6 @@
 {
     "name": "pubq/pubq-php",
-    "description": "Pubq library for PHP to publish messages in channels.",
+    "description": "PUBQ PHP SDK",
     "type": "library",
     "license": "MIT",
     "autoload": {

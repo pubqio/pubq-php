@@ -4,7 +4,7 @@ namespace Pubq;
 
 use GuzzleHttp\Client;
 
-class HttpApi
+class REST
 {
     private $applicationId;
     private $applicationKey;
