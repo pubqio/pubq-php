@@ -6,16 +6,13 @@ use GuzzleHttp\Client;
 
 class REST
 {
-    private $applicationId;
     private $applicationKey;
-    private $applicationSecret;
+
     private $httpClient;
 
-    public function __construct($applicationId, $applicationKey, $applicationSecret)
+    public function __construct($applicationKey)
     {
-        $this->applicationId = $applicationId;
         $this->applicationKey = $applicationKey;
-        $this->applicationSecret = $applicationSecret;
 
         $this->httpClient = new Client([
             'base_uri' => 'https://rest.pubq.io',
@@ -26,9 +23,7 @@ class REST
     {
         $response = $this->httpClient->post('/v1/messages/publish', [
             'headers' => [
-                'Id' => $this->applicationId,
-                'Key' => $this->applicationKey,
-                'Secret' => $this->applicationSecret,
+                'Authorization' => 'Basic ' . base64_encode($this->applicationKey),
             ],
             'json' => [
                 'channel' => $channel,
