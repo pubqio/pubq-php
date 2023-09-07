@@ -21,7 +21,7 @@ class REST
 
     public function publish(string $channel, string|array $data)
     {
-        $response = $this->httpClient->post('/v1/messages/publish', [
+        $response = $this->httpClient->post('/v1/channels/messages', [
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode($this->applicationKey),
             ],
