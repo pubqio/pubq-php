@@ -20,7 +20,7 @@ Or manually add to `composer.json`:
 
 ```json
 "require": {
-    "pubq/pubq-php": "^4.0.0"
+    "pubq/pubq-php": "^5.1.0"
 }
 ```
 
