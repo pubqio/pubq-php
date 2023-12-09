@@ -3,27 +3,27 @@
 use PHPUnit\Framework\TestCase;
 use Pubq\REST;
 
-class RESTTest extends TestCase
+class PublishTest extends TestCase
 {
-    private $applicationKey = 'YOUR_API_KEY';
-    private $restClient;
+    private $rest;
 
     protected function setUp(): void
     {
         parent::setUp();
 
         // Create an instance of the REST class with the mock HTTP client
-        $this->restClient = new REST($this->applicationKey);
+        // Replace the value with your actual API key
+        $this->rest = new REST(['key' => 'YOUR_API_KEY']);
     }
 
-    public function testPublish()
+    public function testPublishResponse()
     {
         // Define the expected request and response
         $expectedChannel = 'test-channel';
         $expectedData = ['key' => 'value'];
 
         // Call the publish method
-        $response = $this->restClient->publish($expectedChannel, $expectedData);
+        $response = $this->rest->publish($expectedChannel, $expectedData);
 
         // Assert that the response status code is as expected
         $this->assertEquals(204, $response->getStatusCode());
