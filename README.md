@@ -20,7 +20,7 @@ Or manually add to `composer.json`:
 
 ```json
 "require": {
-    "pubq/pubq-php": "^5.1.0"
+    "pubq/pubq-php": "^6.0.0"
 }
 ```
 
@@ -39,7 +39,7 @@ Construct REST interface of PUBQ PHP SDK:
 ```php
 <?php
 
-$rest = new Pubq\REST("YOUR_API_KEY");
+$rest = new Pubq\REST(["key": "YOUR_API_KEY"]);
 ```
 
 Publish a message with REST interface:
