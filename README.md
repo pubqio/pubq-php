@@ -39,7 +39,7 @@ Construct REST interface of PUBQ PHP SDK:
 ```php
 <?php
 
-$rest = new Pubq\REST(["key": "YOUR_API_KEY"]);
+$rest = new Pubq\REST(["key" => "YOUR_API_KEY"]);
 ```
 
 Publish a message with REST interface:
