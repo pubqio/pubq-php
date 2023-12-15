@@ -59,7 +59,7 @@ class REST
         return $response;
     }
 
-    public function generateToken(string|null $clientId)
+    public function generateToken(array $options = [])
     {
         $response = $this->client->post(
             "/{$this->version}/keys/tokens",
@@ -68,7 +68,7 @@ class REST
                     'Authorization' => $this->auth->makeAuthorizationHeader(),
                 ],
                 'json' => [
-                    'clientId' => $clientId
+                    'clientId' => $options['clientId'] ?? null,
                 ],
             ]
         );
