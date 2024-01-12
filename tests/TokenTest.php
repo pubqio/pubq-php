@@ -22,7 +22,7 @@ class TokenTest extends TestCase
 
     public function testRequestToken()
     {
-        $response = $this->rest->requestToken();
+        $response = $this->rest->auth->requestToken();
 
         $this->assertIsObject($response);
 
@@ -31,18 +31,18 @@ class TokenTest extends TestCase
 
     public function testRefreshToken()
     {
-        $this->rest->requestToken();
+        $this->rest->auth->requestToken();
 
-        $response = $this->rest->requestRefresh();
+        $response = $this->rest->auth->requestRefresh();
 
         $this->assertIsObject($response);
     }
 
     public function testRevokeToken()
     {
-        $this->rest->requestToken();
+        $this->rest->auth->requestToken();
 
-        $response = $this->rest->requestRevoke();
+        $response = $this->rest->auth->requestRevoke();
 
         $this->assertIsObject($response);
     }
