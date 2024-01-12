@@ -40,13 +40,12 @@ class REST
     public function publish(string $channel, string|array $data)
     {
         $response = $this->client->post(
-            "/{$this->version}/channels/messages",
+            "/{$this->version}/channels/{$channel}/messages",
             [
                 'headers' => [
                     'Authorization' => $this->auth->makeAuthorizationHeader(),
                 ],
                 'json' => [
-                    'channel' => $channel,
                     'data' => $data,
                 ],
             ]
