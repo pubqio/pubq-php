@@ -20,7 +20,7 @@ Or manually add to `composer.json`:
 
 ```json
 "require": {
-    "pubq/pubq-php": "^6.0.0"
+    "pubq/pubq-php": "^1.0.1"
 }
 ```
 
@@ -45,8 +45,8 @@ $rest = new Pubq\REST(["key" => "YOUR_API_KEY"]);
 Publish a message with REST interface:
 
 ```php
-$data['message'] = 'Hello!';
-$rest->publish('my-channel', $data);
+$channel = $rest->channels->get('my-channel');
+$channel->publish('Hello!');
 ```
 
 # Development
