@@ -23,9 +23,10 @@ class PublishTest extends TestCase
         $expectedData = ['key' => 'value'];
 
         // Call the publish method
-        $response = $this->rest->publish($expectedChannel, $expectedData);
+        $channel = $this->rest->channels->get($expectedChannel);
+        $response = $channel->publish($expectedData);
 
         // Assert that the response status code is as expected
-        $this->assertEquals(204, $response->getStatusCode());
+        $this->assertEmpty($response);
     }
 }
