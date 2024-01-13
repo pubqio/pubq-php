@@ -17,6 +17,8 @@ class REST
 
     public $auth;
 
+    public $channels;
+
     public function __construct(array $options = [])
     {
         $this->options = new CommonOptions(
@@ -32,26 +34,11 @@ class REST
 
         $this->auth = new Auth($this->options);
 
+        $this->channels = new RESTChannels($this->auth);
+
         if ($this->options->autoRefreshToken) {
             $this->auth->startRefreshTokenInterval();
         }
-    }
-
-    public function publish(string $channel, string|array $data)
-    {
-        $response = $this->client->post(
-            "/{$this->version}/channels/{$channel}/messages",
-            [
-                'headers' => [
-                    'Authorization' => $this->auth->makeAuthorizationHeader(),
-                ],
-                'json' => [
-                    'data' => $data,
-                ],
-            ]
-        );
-
-        return $response;
     }
 
     public function generateToken(array $options = [])
